@@ -1,6 +1,8 @@
 //Buttons
+//Need to give logic to the specific buttons when pressed, cant really put my head around it for now
 document.querySelector('#zero').onclick = () => {
   console.log('0 Pressed')
+  document.querySelector('#display').innerHTML = 'Test'
 }
 
 document.querySelector('#one').onclick = () => {
@@ -65,4 +67,5 @@ document.querySelector('#decimal').onclick = () => {
 
 document.querySelector('#clear').onclick = () => {
   console.log('CLEAR Pressed')
+  document.querySelector('#display').innerHTML = 'Clear test'
 }

@@ -15,12 +15,14 @@ keys.addEventListener('click', (e) => {
       console.log('number key')
     }
 
+    //Figure out a way to see what operator is clicked during calculations
     if (action === 'plus' || action === 'minus' || action === 'multiply' || action === 'divide') {
       calculator.dataset.firstValue = displayedNum
       calculator.dataset.operator = action
       console.log('operator key')
     }
 
+    //Redundant for now, doesn't work
     if (action === 'decimal') {
       display.textContent = displayedNum + ','
       console.log('decimal key')
@@ -31,6 +33,7 @@ keys.addEventListener('click', (e) => {
       console.log('clear key')
     }
 
+    //Pressing the equal key continues to calculate the numbers without pressing any numbers, fix this.
     if (action === 'equals') {
       let firstValue = calculator.dataset.firstValue
       let operator = calculator.dataset.operator
@@ -41,10 +44,10 @@ keys.addEventListener('click', (e) => {
   }
 })
 
-//To equalize the numbers you choose, but plus doesn't seem to work compared to the others?
+//To equalize the numbers you choose, parsing plus functionality to Int seems to work. Theory: Might be because we convert the values from String to Int so it dosn't concatenate them?
 function equalize(numberOne, operator, numberTwo) {
   if (operator === 'plus') {
-    result = numberOne + numberTwo
+    result = parseInt(numberOne) + parseInt(numberTwo)
   } else if (operator === 'minus') {
     result = numberOne - numberTwo
   } else if (operator === 'multiply') {
